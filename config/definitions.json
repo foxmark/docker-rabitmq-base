@@ -1,0 +1,22 @@
+{
+  "vhosts": [
+    {"name": "dev"},
+    {"name": "test"}
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "admin",
+      "vhost": "test",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ]
+}

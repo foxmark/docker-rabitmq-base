@@ -1,0 +1,19 @@
+version: "3.7"
+
+networks:
+  app_network:
+    name: ${NETWORK_NAME}
+
+services:
+  rabbitmq:
+    image: "rabbitmq:${RMQ_IMAGE_VERSION}"
+    ports:
+      - "${RMQ_PORT}:15672"
+    volumes:
+      - "./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+      - "./config/enabled_plugins:/etc/rabbitmq/enabled_plugins"
+      - "./config/definitions.json:/etc/rabbitmq/definitions.json"
+    environment:
+      - "RABBITMQ_NODENAME=rabbit@rabbitmq"
+      - "RABBITMQ_ERLANG_COOKIE='secret-cookie-for-docker-environment'"
+
