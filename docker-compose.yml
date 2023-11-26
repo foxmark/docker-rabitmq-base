@@ -1,7 +1,7 @@
 version: "3.7"
 
 networks:
-  app_network:
+  rabbitmq_network:
     name: ${NETWORK_NAME}
 
 services:
@@ -16,4 +16,6 @@ services:
     environment:
       - "RABBITMQ_NODENAME=rabbit@rabbitmq"
       - "RABBITMQ_ERLANG_COOKIE='secret-cookie-for-docker-environment'"
+    networks:
+      - rabbitmq_network
 
