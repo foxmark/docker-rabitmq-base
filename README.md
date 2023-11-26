@@ -50,6 +50,6 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 
 Navigate to [http://localhost:15672](http://localhost:15672)
 
-User and password define in [config/rabbitmq.conf](../master/config/rabbitmq.conf).
+User and password define in [config/rabbitmq.conf](../master/config/rabbitmq.conf)
 
-> Note: ```15672``` is a default value for ```RMQ_PORT``` property from ```.env``` file. 
+> Note: Port ```15672``` is a default value for ```RMQ_PORT``` variable from [.env](../master/.env.example) file.
