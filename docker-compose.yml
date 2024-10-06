@@ -1,5 +1,3 @@
-version: "3.7"
-
 networks:
   rabbitmq_network:
     name: ${NETWORK_NAME}
@@ -8,7 +6,8 @@ services:
   rabbitmq:
     image: "rabbitmq:${RABBITMQ_IMAGE_VERSION}"
     ports:
-      - "${RABBITMQ_PORT}:15672"
+      - "${RABBITMQ_ADMIN_PORT}:15672"
+      - "${RABBITMQ_PORT}:5672"
     volumes:
       - "./config/enabled_plugins:/etc/rabbitmq/enabled_plugins"
     environment:
